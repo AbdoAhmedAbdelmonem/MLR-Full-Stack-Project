@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="../static/Images/Icon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap" rel="stylesheet">
+    <title>AURA Upload Arena</title>
+    <link rel="stylesheet" href="../static/Styles/Sub%20Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape shape--1"></div>
+        <div class="shape shape--2"></div>
+        <div class="shape shape--3"></div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3 class="sidebar-title">Uploaded Files</h3>
+            <button class="close-sidebar" id="closeSidebar">&times;</button>
+        </div>
+        <ul class="file-list" id="fileList">
+            <!-- Files will be populated here by JavaScript -->
+        </ul>
+    </div>
+
+    <button class="sidebar-toggle" id="sidebarToggle">
+        <i class="fas fa-folder-open"></i>
+    </button>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">
+                    <div class="loader">
+                      <svg class="absolute" width="0" height="0">
+                        <defs>
+                          <linearGradient
+                            id="b"
+                            x1="0"
+                            y1="62"
+                            x2="0"
+                            y2="2"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#973BED"></stop>
+                            <stop offset="1" stop-color="#007CFF"></stop>
+                          </linearGradient>
+                          <linearGradient
+                            id="c"
+                            x1="0"
+                            y1="64"
+                            x2="0"
+                            y2="0"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#FFC800"></stop>
+                            <stop offset="1" stop-color="#F0F"></stop>
+                            <animateTransform
+                              attributeName="gradientTransform"
+                              type="rotate"
+                              values="0 32 32;-270 32 32;-540 32 32;-810 32 32;-1080 32 32"
+                              dur="8s"
+                              keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1"
+                              repeatCount="indefinite"
+                            ></animateTransform>
+                          </linearGradient>
+                          <linearGradient
+                            id="d"
+                            x1="0"
+                            y1="62"
+                            x2="0"
+                            y2="2"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#00E0ED"></stop>
+                            <stop offset="1" stop-color="#00DA72"></stop>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+
+                      <svg viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          pathLength="360"
+                          d="M15.75 11.40Q13.60 11.40 12.58 12.65Q11.55 13.90 11.55 17.10L11.55 23L19.85 23L19.85 17Q19.85 14.90 19.35 13.63Q18.85 12.35 17.98 11.88Q17.10 11.40 15.75 11.40M19.85 29.90L11.55 29.90L11.55 32.55Q11.55 35.10 10.20 36.30Q8.85 37.50 5.55 37.50Q4.15 37.50 3.25 37.10Q2.35 36.70 1.68 35.75Q1.00 34.80 0.68 32.98Q0.35 31.15 0.18 28.57Q0 26 0 22.05Q0 18.60 0.73 15.72Q1.45 12.85 2.68 10.85Q3.90 8.85 5.45 7.32Q7 5.80 8.83 4.95Q10.65 4.10 12.38 3.67Q14.10 3.25 15.85 3.25Q17.95 3.25 20.00 3.82Q22.05 4.40 24.15 5.80Q26.25 7.20 27.83 9.27Q29.40 11.35 30.40 14.65Q31.40 17.95 31.40 22.05Q31.40 28.65 30.93 31.82Q30.45 35 29.33 36.25Q28.20 37.50 25.85 37.50Q22.55 37.50 21.20 36.30Q19.85 35.10 19.85 32.55L19.85 29.90Z"
+                          class="dash gradient-b"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+
+                      <svg viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          pathLength="360"
+                          d="M30.80 9.25L30.80 24.15Q30.80 31.45 27.27 34.63Q23.75 37.80 15.40 37.80Q7.45 37.80 3.72 34.40Q0 31 0 24.15L0 9.25Q0 6.60 1.58 4.92Q3.15 3.25 5.55 3.25Q8.50 3.25 10.03 4.35Q11.55 5.45 11.55 8.80L11.55 25.10Q11.60 26.70 12.08 27.65Q12.55 28.60 13.35 28.98Q14.15 29.35 15.40 29.35Q16.65 29.35 17.45 29.05Q18.25 28.75 18.63 28.10Q19 27.45 19.13 26.80Q19.25 26.15 19.25 25.10L19.25 8.75Q19.25 7.05 19.68 5.90Q20.10 4.75 20.98 4.20Q21.85 3.65 22.77 3.45Q23.70 3.25 25 3.25Q27.90 3.25 29.35 4.65Q30.80 6.05 30.80 9.25Z"
+                          class="dash gradient-c"
+                          stroke-width="5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+
+                      <svg viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          pathLength="360"
+                          d="M19.20 13.20Q19.20 10.80 17.45 9.90Q15.70 9 11.55 9L11.55 17.65Q15.45 17.65 17.33 16.67Q19.20 15.70 19.20 13.20M11.55 30Q11.55 37.50 5.70 37.50Q2.75 37.50 1.38 35.92Q0 34.35 0 30.35L0 9.25Q0 6.35 1.58 4.82Q3.15 3.30 5.70 3.30L16.20 3.30Q22.35 3.30 26.15 6.17Q29.95 9.05 29.95 13.55Q29.95 16.95 28.53 18.88Q27.10 20.80 23.95 21.70Q26.35 21.85 28.40 24.02Q30.45 26.20 30.45 29.45Q30.45 32.75 29.83 34.52Q29.20 36.30 28.05 36.90Q26.90 37.50 24.80 37.50Q21.85 37.50 20.48 36.27Q19.10 35.05 19.10 32.55Q19.10 29.45 18.50 27.77Q17.90 26.10 16.95 25.60Q16 25.10 14.30 25.10L11.55 25.15L11.55 30Z"
+                          class="dash gradient-d"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+
+                      <svg viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          pathLength="360"
+                          d="M15.75 11.40Q13.60 11.40 12.58 12.65Q11.55 13.90 11.55 17.10L11.55 23L19.85 23L19.85 17Q19.85 14.90 19.35 13.63Q18.85 12.35 17.98 11.88Q17.10 11.40 15.75 11.40M19.85 29.90L11.55 29.90L11.55 32.55Q11.55 35.10 10.20 36.30Q8.85 37.50 5.55 37.50Q4.15 37.50 3.25 37.10Q2.35 36.70 1.68 35.75Q1.00 34.80 0.68 32.98Q0.35 31.15 0.18 28.57Q0 26 0 22.05Q0 18.60 0.73 15.72Q1.45 12.85 2.68 10.85Q3.90 8.85 5.45 7.32Q7 5.80 8.83 4.95Q10.65 4.10 12.38 3.67Q14.10 3.25 15.85 3.25Q17.95 3.25 20.00 3.82Q22.05 4.40 24.15 5.80Q26.25 7.20 27.83 9.27Q29.40 11.35 30.40 14.65Q31.40 17.95 31.40 22.05Q31.40 28.65 30.93 31.82Q30.45 35 29.33 36.25Q28.20 37.50 25.85 37.50Q22.55 37.50 21.20 36.30Q19.85 35.10 19.85 32.55L19.85 29.90Z"
+                          class="dash gradient-b"
+                          stroke-width="4"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                      </svg>
+                      <div class="w-2"></div>
+                    </div>
+                </div>
+                <p class="upload-text">Drag and Drop files here</p>
+                <p class="upload-subtext">OR</p>
+                <button class="btn" id="browseBtn">
+                    <i class="fas fa-search"></i> Browse Files
+                </button>
+                <input type="file" id="fileInput" accept=".csv, .xlsx, .xls" style="display: none;">
+                <p class="upload-subtext">Supported : Only CSV Files (Max - 10MB)</p>
+            </div>
+
+            <div class="progress-container" id="progressContainer">
+                <div class="progress-info">
+                    <span id="progressStatus">Loading...</span>
+                    <span id="progressPercent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+            </div>
+
+            <div class="error" id="errorMessage"></div>
+            <div class="success" id="successMessage"></div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <p>End-to-End Encryption</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <p>AI-Powered Analysis</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <p>Hyper Speed Processing</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 All Rights reserved to <span style="color: var(--secondary)">Duck Engine Team</span></p>
+    </footer>
+
+    <div class="theme-toggle">
+        <div class="toggle-btn" id="themeToggle">
+            <i class="fas fa-robot"></i>
+        </div>
+    </div>
+
+    <script src="../static/Scripts/Sub%20Script.js"></script>
+</body>
+</html>

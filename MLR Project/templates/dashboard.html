@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/Images/Icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/Styles/Main%20Style.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>VAR(β₁) AURA</title>
+</head>
+
+<body>
+
+    <div class="intro-overlay" id="introOverlay">
+    <audio autoplay>
+<!--        <source src="https://www.winhistory.de/more/winstart/ogg/melogoff.ogg" type="audio/mpeg">-->
+        <source src="https://www.winhistory.de/more/winstart/ogg/win2000.ogg" type="audio/mpeg">
+
+        Your browser does not support the audio element.
+    </audio>
+    <div class="intro-content">
+        <h1 class="intro-title">Welcome to the edge of innovation</h1>
+        <p class="intro-subtitle"> Discover it inside the Regression Realm</p>
+        <br>
+        <div class="" style="display: flex;align-items: center;justify-content: center;justify-items: center;margin-top: 50px">
+            <div class="loader">
+              <svg class="absolute" width="0" height="0">
+                <defs>
+                  <linearGradient
+                    id="b"
+                    x1="0"
+                    y1="62"
+                    x2="0"
+                    y2="2"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#973BED"></stop>
+                    <stop offset="1" stop-color="#007CFF"></stop>
+                  </linearGradient>
+                  <linearGradient
+                    id="c"
+                    x1="0"
+                    y1="64"
+                    x2="0"
+                    y2="0"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#FFC800"></stop>
+                    <stop offset="1" stop-color="#F0F"></stop>
+                    <animateTransform
+                      attributeName="gradientTransform"
+                      type="rotate"
+                      values="0 32 32;-270 32 32;-540 32 32;-810 32 32;-1080 32 32"
+                      dur="8s"
+                      keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1"
+                      repeatCount="indefinite"
+                    ></animateTransform>
+                  </linearGradient>
+                  <linearGradient
+                    id="d"
+                    x1="0"
+                    y1="62"
+                    x2="0"
+                    y2="2"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stop-color="#00E0ED"></stop>
+                    <stop offset="1" stop-color="#00DA72"></stop>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <svg viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  pathLength="360"
+                  d="M15.75 11.40Q13.60 11.40 12.58 12.65Q11.55 13.90 11.55 17.10L11.55 23L19.85 23L19.85 17Q19.85 14.90 19.35 13.63Q18.85 12.35 17.98 11.88Q17.10 11.40 15.75 11.40M19.85 29.90L11.55 29.90L11.55 32.55Q11.55 35.10 10.20 36.30Q8.85 37.50 5.55 37.50Q4.15 37.50 3.25 37.10Q2.35 36.70 1.68 35.75Q1.00 34.80 0.68 32.98Q0.35 31.15 0.18 28.57Q0 26 0 22.05Q0 18.60 0.73 15.72Q1.45 12.85 2.68 10.85Q3.90 8.85 5.45 7.32Q7 5.80 8.83 4.95Q10.65 4.10 12.38 3.67Q14.10 3.25 15.85 3.25Q17.95 3.25 20.00 3.82Q22.05 4.40 24.15 5.80Q26.25 7.20 27.83 9.27Q29.40 11.35 30.40 14.65Q31.40 17.95 31.40 22.05Q31.40 28.65 30.93 31.82Q30.45 35 29.33 36.25Q28.20 37.50 25.85 37.50Q22.55 37.50 21.20 36.30Q19.85 35.10 19.85 32.55L19.85 29.90Z"
+                  class="dash gradient-b"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              <svg viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  pathLength="360"
+                  d="M30.80 9.25L30.80 24.15Q30.80 31.45 27.27 34.63Q23.75 37.80 15.40 37.80Q7.45 37.80 3.72 34.40Q0 31 0 24.15L0 9.25Q0 6.60 1.58 4.92Q3.15 3.25 5.55 3.25Q8.50 3.25 10.03 4.35Q11.55 5.45 11.55 8.80L11.55 25.10Q11.60 26.70 12.08 27.65Q12.55 28.60 13.35 28.98Q14.15 29.35 15.40 29.35Q16.65 29.35 17.45 29.05Q18.25 28.75 18.63 28.10Q19 27.45 19.13 26.80Q19.25 26.15 19.25 25.10L19.25 8.75Q19.25 7.05 19.68 5.90Q20.10 4.75 20.98 4.20Q21.85 3.65 22.77 3.45Q23.70 3.25 25 3.25Q27.90 3.25 29.35 4.65Q30.80 6.05 30.80 9.25Z"
+                  class="dash gradient-c"
+                  stroke-width="5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              <svg viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  pathLength="360"
+                  d="M19.20 13.20Q19.20 10.80 17.45 9.90Q15.70 9 11.55 9L11.55 17.65Q15.45 17.65 17.33 16.67Q19.20 15.70 19.20 13.20M11.55 30Q11.55 37.50 5.70 37.50Q2.75 37.50 1.38 35.92Q0 34.35 0 30.35L0 9.25Q0 6.35 1.58 4.82Q3.15 3.30 5.70 3.30L16.20 3.30Q22.35 3.30 26.15 6.17Q29.95 9.05 29.95 13.55Q29.95 16.95 28.53 18.88Q27.10 20.80 23.95 21.70Q26.35 21.85 28.40 24.02Q30.45 26.20 30.45 29.45Q30.45 32.75 29.83 34.52Q29.20 36.30 28.05 36.90Q26.90 37.50 24.80 37.50Q21.85 37.50 20.48 36.27Q19.10 35.05 19.10 32.55Q19.10 29.45 18.50 27.77Q17.90 26.10 16.95 25.60Q16 25.10 14.30 25.10L11.55 25.15L11.55 30Z"
+                  class="dash gradient-d"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              <svg viewBox="0 0 44 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  pathLength="360"
+                  d="M15.75 11.40Q13.60 11.40 12.58 12.65Q11.55 13.90 11.55 17.10L11.55 23L19.85 23L19.85 17Q19.85 14.90 19.35 13.63Q18.85 12.35 17.98 11.88Q17.10 11.40 15.75 11.40M19.85 29.90L11.55 29.90L11.55 32.55Q11.55 35.10 10.20 36.30Q8.85 37.50 5.55 37.50Q4.15 37.50 3.25 37.10Q2.35 36.70 1.68 35.75Q1.00 34.80 0.68 32.98Q0.35 31.15 0.18 28.57Q0 26 0 22.05Q0 18.60 0.73 15.72Q1.45 12.85 2.68 10.85Q3.90 8.85 5.45 7.32Q7 5.80 8.83 4.95Q10.65 4.10 12.38 3.67Q14.10 3.25 15.85 3.25Q17.95 3.25 20.00 3.82Q22.05 4.40 24.15 5.80Q26.25 7.20 27.83 9.27Q29.40 11.35 30.40 14.65Q31.40 17.95 31.40 22.05Q31.40 28.65 30.93 31.82Q30.45 35 29.33 36.25Q28.20 37.50 25.85 37.50Q22.55 37.50 21.20 36.30Q19.85 35.10 19.85 32.55L19.85 29.90Z"
+                  class="dash gradient-b"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              <div class="w-2"></div>
+            </div>
+        </div>
+        <p style=" font-size: 1.5rem; font-family: Rubik, sans-serif;" >Powered by <span style=" font-family: Rubik, cursive;color: #00cec9 ">AURA</span>
+        </p>
+    </div>
+</div>
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="brand">
+                <div class="">
+                    <div class="ui-abstergo">
+                      <div class="abstergo-loader">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+                </div>
+                <div class="brand-name">AURA ✨</div>
+            </div>
+            <div class="nav-tabs">
+                <div class="tab">
+                    <input type="radio" id="cleaning-tab" name="plot-tabs" checked onclick="openTab(event, 'cleaning')">
+                    <label for="cleaning-tab" class="tab-label">
+                        <img src="https://cdn-icons-png.flaticon.com/128/419/419711.png" class="tab-icon" alt="Cleaning">
+                        <span class="tab-text">Data Cleaning</span>
+                    </label>
+                </div>
+                <div class="tab">
+                    <input type="radio" id="Preparing-tab" name="plot-tabs" onclick="openTab(event, 'Preparing')">
+                    <label for="Preparing-tab" class="tab-label">
+                        <img src="https://cdn-icons-png.flaticon.com/128/11083/11083341.png" class="tab-icon" alt="Preparing">
+                        <span class="tab-text">Data Preparing</span>
+                    </label>
+                </div>
+                <div class="tab">
+                    <input type="radio" id="Averages-tab" name="plot-tabs" onclick="openTab(event, 'Averages')">
+                    <label for="Averages-tab" class="tab-label">
+                        <img src="https://cdn-icons-png.flaticon.com/128/6071/6071181.png" class="tab-icon" alt="Averages">
+                        <span class="tab-text">Comparisons</span>
+                    </label>
+                </div>
+                <div class="tab">
+                    <input type="radio" id="Relations-tab" name="plot-tabs" onclick="openTab(event, 'Relations')">
+                    <label for="Relations-tab" class="tab-label">
+                        <img src="https://cdn-icons-png.flaticon.com/128/2875/2875800.png" class="tab-icon" alt="Relations">
+                        <span class="tab-text">Relations</span>
+                    </label>
+                </div>
+                <div class="tab">
+                    <input type="radio" id="MLR-tab" name="plot-tabs" onclick="openTab(event, 'MLR')">
+                    <label for="MLR-tab" class="tab-label">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1998/1998646.png" class="tab-icon" alt="MLR">
+                        <span class="tab-text">MLR</span>
+                    </label>
+                </div>
+                <div class="tab">
+                    <a href="/output" target="_blank">
+                        <label for="upload-tab" class="tab-label" style="border-radius: 12px">
+                            <img src="https://cdn-icons-png.flaticon.com/128/338/338107.png" class="tab-icon" alt="Upload">
+                            <span class="tab-text">Final Output (Redirected Page)</span>
+                        </label>
+                    </a>
+                </div>
+                <div class="tab">
+                    <input type="radio" id="Team-tab" name="plot-tabs" onclick="openTab(event, 'Team')">
+                    <label for="Team-tab" class="tab-label">
+                        <img src="https://cdn-icons-png.flaticon.com/128/4807/4807598.png" class="tab-icon" alt="Team">
+                        <span class="tab-text">Team</span>
+                    </label>
+                </div>
+                <div class="tab" style="position: absolute; bottom: 0; left: 0; width: 100%;padding: 10px;border-radius: 12px">
+                    <a href="/">
+                        <label for="upload-tab" class="tab-label" style="border-radius: 12px">
+                            <img src="https://cdn-icons-png.flaticon.com/128/2550/2550435.png" class="tab-icon" alt="Upload">
+                            <span class="tab-text">Use Other Dataset</span>
+                        </label>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+                <div id="cleaning" class="tab-content active">
+                <h1 class="dashboard-title">Cleaning Results</h1>
+                <div class="plot-card" style="height: auto; min-height: 200px; position: relative;">
+                    <div class="data-glow-container">
+                        <div class="summary-header">
+                                <h3 style="color: #ffb86c; margin: 0;">Detected file Name</h3>
+                                <div class="summary-stats">
+                                    <span class="summary-stat">
+                                        <span class="stat-value">{{ filename }}</span>
+                                    </span>
+                                </div>
+                            </div>
+                        <div class="data-stats-grid">
+                            <div class="stat-card" style="--accent-color: #bb86fc;">
+                                <div class="stat-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                        <path d="M3.27 6.96L12 12.01l8.73-5.05"></path>
+                                        <path d="M12 22.08V12"></path>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Total Rows</h3>
+                                    <div class="counter" data-target="{{ total_rows }}">0</div>
+                                </div>
+                                <div class="stat-wave"></div>
+                            </div>
+                            <div class="stat-card" style="--accent-color: #03dac6;">
+                                <div class="stat-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Cleaned Rows</h3>
+                                    <div class="counter" data-target="{{ filtered_rows }}">0</div>
+                                </div>
+                                <div class="stat-wave"></div>
+                            </div>
+                            <div class="stat-card" style="--accent-color: #ffb86c;">
+                                <div class="stat-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Duplicated Rows</h3>
+                                    <div class="counter" data-target="{{ duplicates_count }}">0</div>
+                                </div>
+                                <div class="stat-wave"></div>
+                            </div>
+                            <div class="stat-card" style="--accent-color: #ff7597;">
+                                <div class="stat-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                    </svg>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Removed Rows</h3>
+                                    <div class="counter" data-target="{{ removed_rows }}">0</div>
+                                </div>
+                                <div class="stat-wave"></div>
+                            </div>
+                        </div>
+                        <div class="data-preview-section">
+                            <div class="preview-header">
+                                <h3 style="color: var(--secondary); margin: 0;">Cleaned Data Summary</h3>
+                                <div class="data-dimensions">
+                                    <span class="dimension-badge">Number of Rows: {{ filtered_rows }}</span>
+                                    <span class="dimension-badge"> Number of Columns: {{ columns_count }}</span>
+                                    <span class="dimension-badge"> File Size in MB: {{ File_Size }} MB</span>
+                                </div>
+                            </div>
+                            <div class="data-table-container">
+                                {{ cleaned_data_table|safe }}
+                            </div>
+                        </div>
+                        <div class="summary-section">
+                            <div class="summary-header">
+                                <h3 style="color: var(--secondary); margin: 0;">Cleaning Operations</h3>
+                                <div class="summary-stats">
+                                    <span class="summary-stat">
+                                        <span class="stat-value">{{ operations_count }}</span>
+                                        <span class="stat-label">Operation that the System done</span>
+                                    </span>
+                                    <span class="summary-stat">
+                                        <span class="stat-value">{{ elapsed_time }}</span>
+                                        <span class="stat-label">Second from Elapsed time</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="summary-details">
+                                <table border="1" style="width:100%; border-collapse: collapse;">
+                                    <thead>
+                                        <tr>
+                                            <th>Statistic</th>
+                                            {% for column in data_summary.keys() %}
+                                                <th>{{ column }}</th>
+                                            {% endfor %}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% set first_key = data_summary.keys() | first %}
+                                        {% for stat in data_summary[first_key].keys() %}
+                                            <tr>
+                                                <td><strong>{{ stat }}</strong></td>
+                                                {% for column in data_summary.keys() %}
+                                                    <td>
+                                                        {% if data_summary[column][stat] is number %}
+                                                            {{ "%.2f" | format(data_summary[column][stat]) }}
+                                                        {% else %}
+                                                            {{ data_summary[column][stat] }}
+                                                        {% endif %}
+                                                    </td>
+                                                {% endfor %}
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center;padding: 20px">
+                        <div style="width: 50%; padding-right: 20px;">
+                            <p>The image shows a dataset header with variables related to student
+                                performance, including study hours, previous scores, sleep duration, practice
+                                exams taken, performance metrics, and extracurricular activity
+                                (encoded numerically). This data is likely used to analyze academic success
+                                factors.</p>
+                        </div>
+                        <div style="width: 50%;">
+                            <img src="../static/Plots/boxplot.png" alt="Boxplot" style="width: 100%; height: auto;border-radius: 12px">
+                        </div>
+                    </div>
+                    <div class="code-toggle-btn" onclick="toggleCode(this)">Show Code</div>
+                    <div class="code-panel">
+                        <pre><code class="language-python">{{ clean_code|safe }}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="Preparing" class="tab-content">
+            <h1 class="dashboard-title">Data Preparing</h1>
+                <div class="plot-card" style="height: auto">
+                    <div class="plots-container" style="display: flex;flex-direction: column;gap: 40px;">
+                        <div class="plot-row" style="display: flex;
+                            align-items: center;
+                            justify-content: space-between;">
+                            <div class="plot-container" style="width: 60%;padding: 15px;box-sizing: border-box;">
+                                {{ plot_html1|safe }}
+                            </div>
+                            <div class="plot-description" style="width: 40%;">
+                                <h3>First Plot Title</h3>
+                                <p>
+                                    The box plot displays the distribution of performance
+                                    index scores based on participation in extracurricular
+                                    activities. Both groups—those who participate ("Yes") and those
+                                    who do not ("No")—show a similar median score of around 55, and
+                                    their score ranges extend from approximately 10 to 100. The
+                                    interquartile ranges are also comparable, indicating similar variability
+                                    in scores. Overall, the plot suggests that participation in extracurricular
+                                    activities does not significantly impact performance index scores.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="plot-row" style="display: flex;
+                            align-items: center;
+                            justify-content: space-between;">
+                            <div class="plot-description" style="width: 40%;padding: 15px;box-sizing: border-box;">
+                                <h3>Second Plot Title</h3>
+                                <p>
+                                    The scatter plot illustrates the relationship between
+                                    hours studied and performance index, segmented
+                                    by participation in extracurricular activities. As the
+                                    number of study hours increases, the performance index
+                                    generally rises for both groups. Data points for students
+                                    involved in extracurricular activities (blue) and those
+                                    not involved (red) are closely aligned, indicating that study
+                                    time has a stronger influence on performance than
+                                    extracurricular participation. Overall, a positive correlation is
+                                    observed between hours studied and performance, regardless
+                                    of extracurricular activity involvement.
+                                </p>
+                            </div>
+                            <div class="plot-container" style="width: 60%;">
+                                {{ plot_html2|safe }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-toggle-btn" onclick="toggleCode(this)">Show Code</div>
+                    <div class="code-panel">
+                        <pre><code class="language-python">{{_code2_|safe}}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="Relations" class="tab-content">
+                <h1 class="dashboard-title">Relations</h1>
+                <div class="plot-card" style="height: auto">
+                    <div class="plots-container" style="display: flex;flex-direction: column;gap: 40px;">
+                        <div class="plot-row" style="display: flex;
+                            align-items: center;
+                            justify-content: space-between;">
+                            <div class="plot-container" style="width: 60%;padding: 15px;box-sizing: border-box;">
+                                <img src="../static/Plots/Correlation_M.png" alt="Boxplot" style="width: 100%; height: auto;border-radius: 12px">
+                            </div>
+                            <div class="plot-description" style="width: 40%;">
+                                <h3>First Plot Title</h3>
+                                <p>The correlation heatmap reveals relationships between
+                                    study habits, sleep, extracurriculars, and academic
+                                    performance. Key findings:</p><ul> <li><strong>Previous scores</strong>
+                                show an unexpected strong negative correlation (-0.92)
+                                with performance, suggesting possible data errors</li>
+                                <li><strong>Hours studied</strong> moderately impacts performance (-0.38)</li>
+                                <li>Other factors like sleep hours and extracurricular activities show
+                                    minimal correlation</li> <li>Data quality concerns are apparent
+                                    due to repeated rows and extreme values</li> </ul>
+                                <p>The analysis questions assumptions about study
+                                    habits while highlighting potential data issues needing review.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="plot-row" style="display: flex;
+                            align-items: center;
+                            justify-content: space-between;">
+                            <div class="plot-description" style="width: 40%;padding: 15px;box-sizing: border-box;">
+                                <h3>Second Plot Title</h3>
+                                <p>The image compares performance based on
+                                    sleep duration (7-9 hours vs. 5-7 hours) and
+                                    extracurricular involvement ("Yes" or "No"). However
+                                    , key visual data (e.g., bars or trends) is missing,
+                                    making the exact impact unclear. The title
+                                    suggests performance may vary with these factors.
+                                </p>
+                            </div>
+                            <div class="plot-container" style="width: 60%;">
+                                {{ plot_html5|safe }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-toggle-btn" onclick="toggleCode(this)">Show Code</div>
+                    <div class="code-panel">
+                        <pre><code class="language-python">{{_code3_|safe}}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="Averages" class="tab-content">
+                <h1 class="dashboard-title">Data Comparisons</h1>
+                <div class="plot-card" style="height: auto">
+                    <div class="plots-container" style="display: flex;flex-direction: column;gap: 40px;">
+                        <div class="plot-row" style="display: flex;
+                            align-items: center;
+                            justify-content: space-between;">
+                            <div class="plot-description" style="width: 40%;">
+                                <h3>First Plot Title</h3>
+                                <p>
+                                    This bar chart shows the total performance index
+                                    scores grouped by sleep hours and categorized
+                                    by participation in extracurricular activities. As
+                                    sleep duration increases from 4 to 8 hours, the
+                                    overall performance index tends to rise for both
+                                    groups. Notably, students who do not participate
+                                    in extracurricular activities (red bars) generally
+                                    exhibit slightly higher total performance at higher
+                                    sleep durations, especially around 8 hours. This
+                                    suggests that sleep may have a more significant
+                                    impact on performance than extracurricular
+                                    participation in this context.
+                                </p>
+                            </div>
+                            <div class="plot-container" style="width: 60%;padding: 15px;box-sizing: border-box;">
+                                {{ plot_html3|safe }}
+                            </div>
+                        </div>
+                        <div class="plot-row" style="display: flex;
+                            align-items: center;
+                            justify-content: space-between;">
+                            <div class="plot-container" style="width: 60%;">
+                                {{ plot_html4|safe }}
+                            </div>
+                            <div class="plot-description" style="width: 40%;padding: 15px;box-sizing: border-box;">
+                                <h3>Second Plot Title</h3>
+                                <p>The graph shows how practicing sample
+                                    questions affects performance, comparing
+                                    students involved in extracurricular activities
+                                    ("Yes") to those not involved ("No"). The "Yes"
+                                    group's performance rises sharply with more practice.
+                                    while the "No" group shows little improvement.
+                                    This suggests that practice boosts performance,
+                                    especially for students in extracurriculars.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code-toggle-btn" onclick="toggleCode(this)">Show Code</div>
+                    <div class="code-panel">
+                        <pre><code class="language-python">{{_code4_|safe}}</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div id="MLR" class="tab-content">
+            <h1 class="dashboard-title">Multiple Linear Regression Analysis</h1>
+            <div class="mlr-doc-container">
+                <div class="mlr-header">
+                    <div class="mlr-intro">
+                        <h2>Statistical Modeling Powerhouse</h2>
+                        <p>This class implements comprehensive multiple linear regression analysis:</p>
+                        <ul>
+                            <li>Complete regression analysis with ANOVA table</li>
+                            <li>Prediction capabilities for new observations</li>
+                            <li>Interactive 3D visualization for two predictors</li>
+                            <li>Hypothesis testing with F-statistics</li>
+                            <li>Confidence intervals for coefficients</li>
+                        </ul>
+                    </div>
+                    <img src="../static/Images/mULTIPLE-removebg-preview.png" alt="MLR Visualization" class="mlr-logo">
+                </div>
+                <div class="notebook-container">
+                    <div class="notebook-cell markdown-cell">
+                        <h3>MLR Class Overview</h3>
+                        <p>This implementation provides end-to-end multiple linear regression capabilities:</p>
+                        <div class="class-diagram">
+                            <div class="class-name">MultipleLinearRegression</div>
+                            <div class="class-methods">
+                                <div class="method">__init__()</div>
+                                <div class="method">Fitting_Function()</div>
+                                <div class="method">Prediction_Model()</div>
+                                <div class="method">Plot_3D()</div>
+                                <div class="method">Anova_Table()</div>
+                                <div class="method">hypothesis_test()</div>
+                                <div class="method">Interval_Estimation()</div>
+                                <div class="method">partial_f_test()</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notebook-cell code-cell">
+                        <div class="code-header">
+                            <span class="notebook-badge">In [1]</span>
+                            <span class="code-title">Class Initialization</span>
+                        </div>
+                        <pre><code class="language-python">class MultipleLinearRegression:
+            def __init__(self):
+                self.F_stat = None      # F-statistic for hypothesis testing
+                self.SSR = None         # Regression sum of squares
+                self.SST = None         # Total sum of squares
+                self.SSE = None         # Error sum of squares
+                self.y_bar = None       # Mean of response variable
+                self.n = None           # Number of observations
+                self.df_regression = None  # Degrees of freedom for regression
+                self.df_error = None    # Degrees of freedom for error
+                self.B = None           # Coefficient estimates
+                self.MSE = None         # Mean squared error
+                self.r_squared = None   # Coefficient of determination
+                self.error = None       # Residuals
+                self.X = None           # Design matrix
+                self.y = None           # setup the y-vector
+                self.F_c = None      # F critical for hypothesis test
+                self.R_2_adj = None      # R-squared adjusted for comparing
+                        </code></pre>
+                        <div class="code-output">
+                            <p>Initializes all regression statistics as None. These will be populated during model fitting.</p>
+                        </div>
+                    </div>
+                    <div class="notebook-cell code-cell">
+                        <div class="code-header">
+                            <span class="notebook-badge">In [2]</span>
+                            <span class="code-title">Model Fitting (Ordinary Least Squares)</span>
+                        </div>
+                        <pre><code class="language-python">
+           def Fitting_Function(self, X, y):
+                self.n = len(X)
+                self.y_bar = np.mean(y)
+
+                if isinstance(X, pd.DataFrame):
+                    X = X.copy()
+                    if 'B0' not in X.columns:
+                        X.insert(0, 'B0', 1)
+                else:
+                    #Stack 1-D arrays as columns into a 2-D array.
+                    X = np.column_stack([np.ones(self.n), X])
+
+                X = np.array(X)
+                y = np.array(y)
+
+                XT_X = X.T @ X # @ -> Dot Product
+                XT_y = X.T @ y
+                self.B = np.linalg.inv(XT_X) @ XT_y
+
+                self.SSE = y.T @ y - self.B.T @ XT_y
+                self.SST = y.T @ y - self.n * (self.y_bar ** 2)
+                self.SSR = self.SST - self.SSE
+                self.r_squared = self.SSR / self.SST
+
+                self.df_error = self.n - len(self.B)
+                self.df_regression = len(self.B) - 1
+                self.error = y - X @ self.B
+                self.MSE = self.SSE / self.df_error
+                self.X = X
+                self.R_2_adj = 1 - ((self.n - 1) / (self.n - len(self.B)) * (self.SSE / self.SST)) # degree of freedom
+                        </code></pre>
+                        <div class="code-output">
+                            <p>Performs Ordinary Least Squares Estimation by:</p>
+                            <ol>
+                                <li>Adding intercept term if missing</li>
+                                <li>Solving normal equations (X'X)β = X'y</li>
+                                <li>Calculating SSE, SST, SSR</li>
+                                <li>Computing R-squared ans R-squared adj and MSE</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="notebook-cell code-cell">
+                        <div class="code-header">
+                            <span class="notebook-badge">In [3]</span>
+                            <span class="code-title">Prediction Method</span>
+                        </div>
+                        <pre><code class="language-python">
+           def Prediction_Model(self, X):
+                if self.B is None:
+                    raise ValueError("Model not fitted yet.")
+
+                if isinstance(X, pd.DataFrame):
+                    X = X.copy()
+                    if 'B0' not in X.columns:
+                        X.insert(0, 'B0', 1)
+                else:
+                    X = np.column_stack([np.ones(len(X)), X])
+
+                return X @ self.B #returns Y-hat
+                        </code></pre>
+                        <div class="code-output">
+                            <p>Generates predictions for new data by:</p>
+                            <ul>
+                                <li>Checking if model is fitted</li>
+                                <li>Automatically adding intercept term</li>
+                                <li>Calculating ŷ = Xβ</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="notebook-cell code-cell">
+                        <div class="code-header">
+                            <span class="notebook-badge">In [4]</span>
+                            <span class="code-title">Hypothesis Testing</span>
+                        </div>
+                        <pre><code class="language-python">
+          def Anova_Table(self):
+                if self.B is None:
+                    raise ValueError("The model has not been fitted yet.")
+
+                self.df_regression = len(self.B) - 1
+                df_total = self.n - 1
+
+                MSR = self.SSR / self.df_regression
+                MSE = self.SSE / self.df_error
+
+                self.F_stat = MSR / MSE
+
+                anova_data = {
+                    'Source': ['Regression', 'Error', 'Total'],
+                    'Sum of Squares': [self.SSR, self.SSE, self.SST],
+                    'Degrees of Freedom': [self.df_regression, self.df_error, df_total],
+                    'Mean Square': [MSR, MSE, ""],
+                    'F-Statistic': [self.F_stat, "", ""]
+                }
+
+                anova_table = pd.DataFrame(anova_data)
+                return anova_table
+                        </code></pre>
+                          <div class="code-output">
+                            <p>Produces standard ANOVA table with:</p>
+                            <ul>
+                                <li>Partitioning of total variation</li>
+                                <li>Degrees of freedom for each component</li>
+                                <li>Mean squares and F-statistic</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="notebook-cell code-cell">
+                        <div class="code-header">
+                            <span class="notebook-badge">In [5]</span>
+                            <span class="code-title">3D Visualization</span>
+                        </div>
+                        <pre><code class="language-python">
+            def Plot_3D(self, X, y, feature_names=None):
+                """Plot 3D regression for any two features while holding others constant"""
+                if len(self.B) < 3:
+                    raise ValueError("Need at least two predictors for 3D plot")
+
+                X = np.array(X)
+                y = np.array(y)
+
+                if feature_names is None:
+                    feature_names = [f'Feature {i}' for i in range(X.shape[1])]
+
+                # Create subplots for all feature pairs
+                from itertools import combinations
+                from plotly.subplots import make_subplots
+                import plotly.graph_objects as go
+
+                feature_pairs = list(combinations(range(X.shape[1]), 2))
+                rows = int(np.ceil(len(feature_pairs)/2))
+
+                fig = make_subplots(
+                    rows=rows, cols=2,
+                    specs=[[{'type': 'surface'}, {'type': 'surface'}] for _ in range(rows)],
+                    subplot_titles=[f"{feature_names[i]} vs {feature_names[j]}" for i,j in feature_pairs],
+                    horizontal_spacing=0.1,
+                    vertical_spacing=0.1
+                )
+
+                for idx, (i, j) in enumerate(feature_pairs):
+                    row = (idx // 2) + 1
+                    col = (idx % 2) + 1
+
+                    # Create grid for surface plot
+                    x1_range = np.linspace(X[:, i].min(), X[:, i].max(), 20)
+                    x2_range = np.linspace(X[:, j].min(), X[:, j].max(), 20)
+                    x1_grid, x2_grid = np.meshgrid(x1_range, x2_range)
+
+                    # Create prediction matrix (hold other features at their mean)
+                    X_grid = np.column_stack([np.ones(x1_grid.size)])
+                    for k in range(X.shape[1]):
+                        if k == i:
+                            X_grid = np.column_stack([X_grid, x1_grid.ravel()])
+                        elif k == j:
+                            X_grid = np.column_stack([X_grid, x2_grid.ravel()])
+                        else:
+                            X_grid = np.column_stack([X_grid, np.full(x1_grid.size, X[:, k].mean())])
+
+                    y_grid = (X_grid @ self.B).reshape(x1_grid.shape)
+
+                    # Add scatter plot
+                    fig.add_trace(
+                        go.Scatter3d(
+                            x=X[:, i], y=X[:, j], z=y,
+                            mode='markers',
+                            marker=dict(size=4, color='purple', opacity=0.7),
+                            showlegend=False
+                        ),
+                        row=row, col=col
+                    )
+
+                    # Add surface plot
+                    fig.add_trace(
+                        go.Surface(
+                            x=x1_grid, y=x2_grid, z=y_grid,
+                            colorscale='ice',
+                            opacity=0.6,
+                            showscale=False
+                        ),
+                        row=row, col=col
+                    )
+
+                    # Update subplot scene
+                    fig.update_scenes(
+                        xaxis_title=feature_names[i],
+                        yaxis_title=feature_names[j],
+                        zaxis_title='Performance Index',
+                        camera=dict(eye=dict(x=1.5, y=1.5, z=0.5)),
+                        row=row, col=col
+                    )
+
+                fig.update_layout(
+                    title_text="Multiple Linear Regression - Feature Relationships",
+                    height=400 * rows,
+                    margin=dict(l=0, r=0, b=0, t=40),
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    title_font=dict(color='white')
+                )
+                fig.show()
+                        </code></pre>
+                    <div class="notebook-cell code-cell">
+                        <div class="code-output">
+                            <p>Creates an interactive 3D visualization showing:</p>
+                            <ul>
+                                <li>Actual data points as markers</li>
+                                <li>Regression plane as surface</li>
+                                <li>Works only for models with exactly 2 predictors</li>
+                            </ul>
+                        </div>
+                    </div>
+                        <div class="code-header">
+                            <span class="notebook-badge">In [6]</span>
+                            <span class="code-title">Confidence Intervals</span>
+                        </div>
+                        <pre><code class="language-python">
+         def Interval_Estimation(self, alpha=0.05, Features_name=None, sigma=None):
+                if self.B is None or self.MSE is None:
+                    raise ValueError("Fit the model before running interval estimation.")
+
+                XTX_inv = np.linalg.inv(self.X.T @ self.X)
+
+                if sigma is None:
+                    std_errors = np.sqrt(np.diag(self.MSE * XTX_inv))
+                    critical_value = stats.t.ppf(1 - alpha / 2, df=self.df_error)
+                else:
+                    std_errors = np.sqrt(np.diag((sigma ** 2) * XTX_inv))
+                    critical_value = stats.norm.ppf(1 - alpha / 2)
+
+                lower_bounds = self.B.flatten() - critical_value * std_errors
+                upper_bounds = self.B.flatten() + critical_value * std_errors
+
+                if Features_name is None:
+                    terms = ['Intercept β₀'] + [f'x{i}' for i in range(1, len(self.B.flatten()))]
+                else:
+                    terms = ['Intercept β₀'] + Features_name
+
+                return pd.DataFrame({
+                    'Term': terms,
+                    'Coefficient': self.B.flatten(),
+                    'Lower Bound': lower_bounds,
+                    'Upper Bound': upper_bounds,
+                    'Confidence Level': [f'{(1 - alpha) * 100:.1f}%' for _ in self.B.flatten()]
+                })
+                })</code></pre>
+                        <div class="code-output">
+                            <p>Computes confidence intervals for coefficients:</p>
+                            <ul>
+                                <li>Handles both known and estimated σ²</li>
+                                <li>Uses t-distribution for small samples</li>
+                                <li>Returns formatted dataframe with bounds</li>
+                            </ul>
+                        </div>
+                    </div>
+                        <div class="code-header">
+                            <span class="notebook-badge">In [7]</span>
+                            <span class="code-title">Hypothesis test</span>
+                        </div>
+                        <pre><code class="language-python">
+        def hypothesis_test(self, alpha=0.05):
+                self.F_c = scipy.stats.f.ppf(1 - alpha, self.df_regression, self.df_error)
+
+                if self.F_stat > self.F_c:
+                    conclusion = ("Since F_0 > F_c, we reject the null hypothesis.\n"
+                                  "Therefore, there's a relationship between x and y.")
+                else:
+                    conclusion = ("Since F_c > F_0, we don't reject the null hypothesis.\n"
+                                  "Therefore, there's no relationship between x and y.")
+
+
+                    print("B1 = B2 = ... = Bn = 0 (No relationship) ")
+                    print("At Least one Estimator Bi ≠ 0 for i = 1,2,...,n (Relationship exists)")
+                    print(self.F_stat, self.F_c)
+                    print(conclusion)
+                        </code></pre>
+                        <div class="code-output">
+                            <p>Computes confidence intervals for coefficients:</p>
+                            <ul>
+                                <li>Handles both known and estimated σ²</li>
+                                <li>Uses t-distribution for small samples</li>
+                                <li>Returns formatted dataframe with bounds</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="notebook-cell code-cell">
+                        <div class="code-header">
+                            <span class="notebook-badge">In [8]</span>
+                            <span class="code-title">Partial F - Test</span>
+                        </div>
+                        <pre><code class="language-python">
+def qname(name):
+    return f'Q("{name}")'
+
+def partial_f_test(df, response, predictors):
+    response_q = qname(response)
+    predictors_q = [qname(p) for p in predictors]
+    full_formula = f"{response_q} ~ {' + '.join(predictors_q)}"
+    full_model = ols(full_formula, data=df).fit()
+    RSS_full = sum((full_model.fittedvalues - df[response]) ** 2)
+    df_full = full_model.df_resid
+
+    results = []
+
+    for predictor in predictors:
+        reduced_predictors = [p for p in predictors if p != predictor]
+        reduced_q = [qname(p) for p in reduced_predictors]
+        reduced_formula = f"{response_q} ~ {' + '.join(reduced_q)}"
+        reduced_model = ols(reduced_formula, data=df).fit()
+        RSS_reduced = sum((reduced_model.fittedvalues - df[response]) ** 2)
+        df_reduced = reduced_model.df_resid
+
+        num = (RSS_reduced - RSS_full) / (df_reduced - df_full)
+        den = RSS_full / df_full
+        F_stat = num / den
+
+        alpha = 0.05
+        dfn = df_reduced - df_full
+        dfd = int(df_full)
+        F_critical = f.ppf(1 - alpha, dfn, dfd)
+        p_value = 1 - f.cdf(F_stat, dfn, dfd)
+
+        decision = "Significant (keep)" if F_stat > F_critical else "Not Significant (can drop)"
+
+        results.append({
+            'Predictor': predictor,
+            'F_stat': F_stat,
+            'F_critical': F_critical,
+            'p_value': p_value,
+            'Decision': decision,
+        })
+
+    return pd.DataFrame(results)
+                        </code></pre>
+                          <div class="code-output">
+                            <p>Produces standard ANOVA table with:</p>
+                            <ul>
+                                <li>Partitioning of total variation</li>
+                                <li>Degrees of freedom for each component</li>
+                                <li>Mean squares and F-statistic</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div id="Team" class="tab-content">
+                <h1 class="dashboard-title">Team Members</h1>
+                <div class="plot-card">
+                    <div class="plots-container" style="display: flex;flex-direction: column;gap: 40px;">
+                          <div class="team-section" style="position: relative; height: 800px; overflow: hidden; background:transparent; border-radius: 15px; padding: 20px;">
+                            <div class="team-credits" style="position: absolute; width: 100%; animation: scrollCredits 90s linear infinite;">
+                                <div class="team-member" style="display: flex; justify-content: center; margin: 30px 0; transform: translateX(100%); animation: slideIn 10s forwards 0s, slideOut 10s forwards 15s;">
+                                <div class="member-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 25px; width: 70%; display: flex; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2);">
+                                  <div class="avatar" style="width: 100px; height: 100px; background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); border-radius: 50%; margin-right: 25px; display: flex; justify-content: center; align-items: center; font-size: 40px; color: white; font-weight: bold;">AA</div>
+                                  <div class="member-info" style="color: white;">
+                                    <h3 style="margin: 0; font-size: 24px; font-family: 'Arial', sans-serif; letter-spacing: 1px;">ABDELRAHMAN AHMED</h3>
+                                    <p style="margin: 5px 0; font-style: italic; color: #a1c4fd;">Web Developer & Project Manager</p>
+                                    <p style="margin: 10px 0 0; opacity: 0.9; font-size: 14px;">Visionary leader transforming ideas into stunning visual and Master organizer ensuring projects are delivered on time</p>
+                                  </div>
+                                </div>
+                              </div>
+                                <div class="team-member" style="display: flex; justify-content: center; margin: 30px 0; transform: translateX(100%); animation: slideIn 2s forwards 2s, slideOut 13s forwards 18s;">
+                                <div class="member-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 25px; width: 70%; display: flex; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2);">
+                                  <div class="avatar" style="width: 100px; height: 100px; background: linear-gradient(45deg, #a1c4fd 0%, #c2e9fb 100%); border-radius: 50%; margin-right: 25px; display: flex; justify-content: center; align-items: center; font-size: 40px; color: white; font-weight: bold;">MM</div>
+                                  <div class="member-info" style="color: white;">
+                                    <h3 style="margin: 0; font-size: 24px; font-family: 'Arial', sans-serif; letter-spacing: 1px;">MOHAMMED MSD</h3>
+                                    <p style="margin: 5px 0; font-style: italic; color: #a1c4fd;">Lead Developer</p>
+                                    <p style="margin: 10px 0 0; opacity: 0.9; font-size: 14px;">Code wizard building seamless digital experiences with cutting-edge technologies and innovative solutions.</p>
+                                  </div>
+                                </div>
+                              </div>
+                                <div class="team-member" style="display: flex; justify-content: center; margin: 30px 0; transform: translateX(100%); animation: slideIn 2s forwards 4s, slideOut 16s forwards 21s;">
+                                <div class="member-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 25px; width: 70%; display: flex; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2);">
+                                  <div class="avatar" style="width: 100px; height: 100px; background: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%); border-radius: 50%; margin-right: 25px; display: flex; justify-content: center; align-items: center; font-size: 40px; color: white; font-weight: bold;">HM</div>
+                                  <div class="member-info" style="color: white;">
+                                    <h3 style="margin: 0; font-size: 24px; font-family: 'Arial', sans-serif; letter-spacing: 1px;">HABIBA MOHAMMED</h3>
+                                    <p style="margin: 5px 0; font-style: italic; color: #a1c4fd;">UX Designer</p>
+                                    <p style="margin: 10px 0 0; opacity: 0.9; font-size: 14px;">User experience architect crafting intuitive interfaces that delight users and drive engagement.</p>
+                                  </div>
+                                </div>
+                              </div>
+                                <div class="team-member" style="display: flex; justify-content: center; margin: 30px 0; transform: translateX(100%); animation: slideIn 2s forwards 6s, slideOut 19s forwards 24s;">
+                                <div class="member-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 25px; width: 70%; display: flex; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2);">
+                                  <div class="avatar" style="width: 100px; height: 100px; background: linear-gradient(45deg, #84fab0 0%, #8fd3f4 100%); border-radius: 50%; margin-right: 25px; display: flex; justify-content: center; align-items: center; font-size: 40px; color: white; font-weight: bold;">RA</div>
+                                  <div class="member-info" style="color: white;">
+                                    <h3 style="margin: 0; font-size: 24px; font-family: 'Arial', sans-serif; letter-spacing: 1px;">REWAN AHMED</h3>
+                                    <p style="margin: 5px 0; font-style: italic; color: #a1c4fd;">Interval Analysis</p>
+                                    <p style="margin: 10px 0 0; opacity: 0.9; font-size: 14px;">Test the truth and how much is will by Confidence interval and Estimation</p>
+                                  </div>
+                                </div>
+                              </div>
+                                <div class="team-member" style="display: flex; justify-content: center; margin: 30px 0; transform: translateX(100%); animation: slideIn 2s forwards 8s, slideOut 22s forwards 27s;">
+                                <div class="member-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 25px; width: 70%; display: flex; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2);">
+                                  <div class="avatar" style="width: 100px; height: 100px; background: linear-gradient(45deg, #a6c1ee 0%, #fbc2eb 100%); border-radius: 50%; margin-right: 25px; display: flex; justify-content: center; align-items: center; font-size: 40px; color: white; font-weight: bold;">MA</div>
+                                  <div class="member-info" style="color: white;">
+                                    <h3 style="margin: 0; font-size: 24px; font-family: 'Arial', sans-serif; letter-spacing: 1px;">MOHAMMED ABDEEN</h3>
+                                    <p style="margin: 5px 0; font-style: italic; color: #a1c4fd;">Project Data Analysis</p>
+                                    <p style="margin: 10px 0 0; opacity: 0.9; font-size: 14px;">Convert the row data to a knowledge to get the pure benefits from it</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/Scripts/Main%20Script.js"></script>
+</body>
+</html>
+
+
